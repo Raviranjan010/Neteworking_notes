@@ -64,4 +64,4 @@ flowchart LR
 
 ## ⬅️ Navigation
 - **Previous:** [01_Fundamentals](../01_Fundamentals/README.md)
-- **Next:** [03_TCP_IP_Model](../03_TCP_IP_Model/notes.md)
+- **Next:** [03_TCP_IP_Model](../03_TCP_IP_Model/README.md)

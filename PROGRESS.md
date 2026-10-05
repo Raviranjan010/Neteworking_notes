@@ -1,6 +1,6 @@
 # 📊 Project Progress & Quality Gates Dashboard
 
-> **Last Updated:** 2026-10-05 (Phase 0 Complete)  
+> **Last Updated:** 2026-10-05 (Phase 1 Complete)  
 > **Repository Target:** 20 Modules, ~100+ Core Files, 800+ Verified Questions, Complete Visual Overhaul.
 
 ---
@@ -10,8 +10,8 @@
 | Phase | Description | Scope | Status | Date Completed |
 |:---:|---|---|:---:|:---:|
 | **0** | **Audit & Scaffold** | Confirm Part 2 issues, renumber folders via `git mv`, scaffold target tree, rewrite root README, create root guides & templates | ✅ **Done** | 2026-10-05 |
-| **1** | **Repair Existing Modules (01–03)** | Upgrade 01 Fundamentals, 02 OSI Model, 03 TCP/IP Model (add README, numericals, interview_qa, cheatsheets, Mermaid, balanced MCQs) | ⏳ Up Next | — |
-| **2** | **Physical + Data Link Layers (04, 05)** | Author complete 04 Physical Layer and 05 Data Link Layer (the heaviest GATE area), build Python verification scripts | 📋 Planned | — |
+| **1** | **Repair Existing Modules (01–03)** | Upgrade 01 Fundamentals, 02 OSI Model, 03 TCP/IP Model (add README, numericals, interview_qa, cheatsheets, Mermaid, balanced MCQs) | ✅ **Done** | 2026-10-05 |
+| **2** | **Physical + Data Link Layers (04, 05)** | Author complete 04 Physical Layer and 05 Data Link Layer (the heaviest GATE area), build Python verification scripts | ⏳ Up Next | — |
 | **3** | **Devices/LAN + IP + Subnetting (06–08)** | Overhaul 06 Network Devices/LAN, 07 IP Addressing, 08 Subnetting (author 45 verified subnetting problems) | 📋 Planned | — |
 | **4** | **Network Layer Protocols + Routing (09, 10)** | Author 09 Network Layer Protocols (IPv4/v6, ARP, ICMP, NAT, fragmentation) and expand 10 Routing (SPF, DV, BGP) | 📋 Planned | — |
 | **5** | **Transport Layer (11)** | Rebuild 11 Transport Layer (TCP Tahoe/Reno, cwnd, state machine, timers, UDP, QUIC, numericals) | 📋 Planned | — |
@@ -36,7 +36,7 @@
 |:---:|---|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
 | **01** | Fundamentals | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
 | **02** | OSI Model | ✅ | ✅ | ✅ | ➖ | ✅ | ✅ | ✅ |
-| **03** | TCP/IP Model | 📋 | 🚧 | 🚧 | ➖ | 🚧 | 📋 | 📋 |
+| **03** | TCP/IP Model | ✅ | ✅ | ✅ | ➖ | ✅ | ✅ | ✅ |
 | **04** | Physical Layer | 📋 | 📋 | 📋 | 📋 | 📋 | 📋 | 📋 |
 | **05** | Data Link Layer | 📋 | 📋 | 📋 | 📋 | 📋 | 📋 | 📋 |
 | **06** | Network Devices & LAN | 📋 | 🚧 | 📋 *(missing)* | 📋 | 🚧 | 📋 | 📋 |

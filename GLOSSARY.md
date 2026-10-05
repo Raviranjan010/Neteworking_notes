@@ -58,6 +58,7 @@
 - **Data Link Layer:** Layer 2 of the OSI reference model responsible for node-to-node frame delivery, physical MAC addressing, flow control, and error detection. See [05_Data_Link_Layer](05_Data_Link_Layer/).
 - **Datagram:** A self-contained, independent packet carrying sufficient routing information to be forwarded from source to destination without reliance on earlier exchanges or pre-established state. See [09_Network_Layer_Protocols](09_Network_Layer_Protocols/).
 - **Default Gateway:** A router interface IP configured on a local host to which all traffic destined outside the local subnet is forwarded. See [06_Network_Devices_and_LAN](06_Network_Devices_and_LAN/notes.md).
+- **Demultiplexing:** The process at a receiving host of directing incoming packets from lower layers to the correct upper-layer socket based on header fields (e.g. L4 destination port). See [03_TCP_IP_Model](03_TCP_IP_Model/notes.md).
 - **DHCP (Dynamic Host Configuration Protocol):** An application-layer client-server protocol (ports 67/68) that automatically assigns IP addresses, subnet masks, default gateways, and DNS servers to client devices. See [12_Application_Layer](12_Application_Layer/notes.md).
 - **Dijkstra's Algorithm:** A greedy shortest-path algorithm used in link-state routing protocols like OSPF to compute the shortest path tree from a single node to all network destinations. See [10_Routing](10_Routing/notes.md).
 - **DNS (Domain Name System):** The hierarchical, distributed naming database that translates human-readable hostnames (e.g. `google.com`) into numerical IP addresses (port 53). See [12_Application_Layer](12_Application_Layer/notes.md).
@@ -67,12 +68,14 @@
 
 ### E
 - **Encapsulation:** The process where a protocol layer wraps data received from the layer above with its own control header (and optional trailer) before passing it down the stack. See [02_OSI_Model](02_OSI_Model/notes.md).
+- **End-to-End Argument:** A foundational network design principle stating that high-level functions (like reliability and encryption) can only be completely implemented by the communicating endpoints, so intermediate network nodes should provide simple best-effort forwarding. See [03_TCP_IP_Model](03_TCP_IP_Model/notes.md).
 - **Ethernet:** The dominant IEEE 802.3 wired local area network (LAN) standard defining frame formats, MAC addressing, and physical signaling specifications. See [05_Data_Link_Layer](05_Data_Link_Layer/).
 - **EUI-64:** An IEEE standard method for automatically generating a 64-bit IPv6 interface identifier from a device's 48-bit MAC address by inserting `FF:FE` in the middle and flipping the universal/local bit. See [07_IP_Addressing](07_IP_Addressing/notes.md).
 
 ---
 
 ### F
+- **Fate-Sharing:** A distributed systems resilience principle stating that conversation state should be maintained solely by the participating endpoints, so intermediate router failures do not terminate active sessions. See [03_TCP_IP_Model](03_TCP_IP_Model/notes.md).
 - **Flow Control:** A mechanism preventing a fast sender from overwhelming a slow receiver with data faster than the receiver can buffer and process it. See [05_Data_Link_Layer](05_Data_Link_Layer/) & [11_Transport_Layer](11_Transport_Layer/notes.md).
 - **Forwarding:** The data-plane process of moving an incoming packet from a router's input port to the appropriate output port based on its destination IP address and routing table lookup. See [10_Routing](10_Routing/notes.md).
 - **Fragmentation:** The division of an IP datagram into smaller pieces by a router or sending host when the packet size exceeds the outgoing link's Maximum Transmission Unit (MTU). See [09_Network_Layer_Protocols](09_Network_Layer_Protocols/).
@@ -136,6 +139,7 @@
 ### P
 - **PAT (Port Address Translation):** A dynamic form of NAT (also known as NAT Overload) where thousands of internal private host connections are multiplexed onto a single public IP using distinct source port numbers. See [09_Network_Layer_Protocols](09_Network_Layer_Protocols/).
 - **PDU (Protocol Data Unit):** The specific unit of data processed and exchanged at a given layer: Bits (L1), Frame (L2), Packet (L3), Segment (L4), Message/Data (L5–L7). See [02_OSI_Model](02_OSI_Model/notes.md).
+- **PMTUD (Path MTU Discovery):** A diagnostic technique setting the IPv4 Don't Fragment (DF) bit and listening for ICMP "Fragmentation Needed" messages to discover the maximum MTU across an end-to-end path without IP fragmentation. See [03_TCP_IP_Model](03_TCP_IP_Model/notes.md).
 - **Propagation Delay ($T_p$):** The time required for a physical bit signal to travel through the transmission medium from source to destination ($T_p = \frac{\text{Distance}}{\text{Propagation Speed}}$). See [01_Fundamentals](01_Fundamentals/notes.md).
 
 ---

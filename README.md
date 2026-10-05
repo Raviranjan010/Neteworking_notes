@@ -96,7 +96,7 @@ flowchart TD
 |---|---|---|:---:|:---:|:---:|:---:|
 | **01** | [01_Fundamentals](01_Fundamentals/README.md) | Topologies, Delays (Tt, Tp, Tq, Tproc), Switching, BDP | 3–4 hrs | Medium | High | ✅ Complete |
 | **02** | [02_OSI_Model](02_OSI_Model/README.md) | 7 Layers, Encapsulation, Headers/Trailers, Troubleshooting | 3–4 hrs | Low–Med | Very High | ✅ Complete |
-| **03** | [03_TCP_IP_Model](03_TCP_IP_Model/notes.md) | 5-Layer Hybrid Model, Packet Hop Journey, Protocol Matrix | 3–4 hrs | Medium | High | 🚧 Rebuilding |
+| **03** | [03_TCP_IP_Model](03_TCP_IP_Model/README.md) | 5-Layer Hybrid Model, Packet Hop Journey, Protocol Matrix | 3–4 hrs | Medium | High | ✅ Complete |
 | **04** | [04_Physical_Layer](04_Physical_Layer/) | Nyquist, Shannon Capacity, Line Coding, Media, Modulation | 4–5 hrs | Medium | Medium | 📋 Planned (Phase 2) |
 | **05** | [05_Data_Link_Layer](05_Data_Link_Layer/) | CRC, Hamming, Stop-and-Wait, GBN, SR, CSMA/CD, Ethernet | 8–10 hrs | **Highest** | High | 📋 Planned (Phase 2) |
 | **06** | [06_Network_Devices_and_LAN](06_Network_Devices_and_LAN/notes.md) | Hubs vs Switches, STP Elections, VLANs, 802.1Q, Domains | 5–6 hrs | Medium | High | 🚧 Rebuilding |

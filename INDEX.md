@@ -37,11 +37,14 @@ A comprehensive directory of every topic, module, guide, cheatsheet, and lab in 
 - [02_OSI_Model/interview_qa.md](02_OSI_Model/interview_qa.md) — Classic OSI interview questions with model answers
 - [02_OSI_Model/cheatsheet.md](02_OSI_Model/cheatsheet.md) — One-page quick revision sheet
 
-### [03. TCP/IP Model](03_TCP_IP_Model/notes.md)
+### [03. TCP/IP Model](03_TCP_IP_Model/README.md)
 *Core concept: The practical 4-layer / 5-layer hybrid architecture running the global Internet.*
-- [03_TCP_IP_Model/notes.md](03_TCP_IP_Model/notes.md) — Architecture, protocol suite, and packet hop tracking
-- [03_TCP_IP_Model/diagrams.md](03_TCP_IP_Model/diagrams.md) — Hop-by-hop header evolution across routers
-- [03_TCP_IP_Model/mcqs.md](03_TCP_IP_Model/mcqs.md) — Protocol mapping and model comparison questions
+- [03_TCP_IP_Model/README.md](03_TCP_IP_Model/README.md) — Module overview & learning roadmap
+- [03_TCP_IP_Model/notes.md](03_TCP_IP_Model/notes.md) — Architecture, protocol suite, and hop-by-hop packet traversal
+- [03_TCP_IP_Model/diagrams.md](03_TCP_IP_Model/diagrams.md) — 10 Mermaid architectural, fate-sharing, and hop-by-hop diagrams
+- [03_TCP_IP_Model/mcqs.md](03_TCP_IP_Model/mcqs.md) — 55 practice questions (MCQ, MSQ, NAT, Scenarios)
+- [03_TCP_IP_Model/interview_qa.md](03_TCP_IP_Model/interview_qa.md) — 15 systems design & networking interview questions with model answers
+- [03_TCP_IP_Model/cheatsheet.md](03_TCP_IP_Model/cheatsheet.md) — One-page quick revision sheet
 
 ### [04. Physical Layer](04_Physical_Layer/) *(Planned: Phase 2)*
 *Core concept: Analog vs digital signals, transmission media, Nyquist/Shannon capacities, and line coding.*
