@@ -109,7 +109,7 @@ Bottom (Hardware Focus)
 | **Primary Job** | End-to-end packet delivery, logical addressing, and path determination (routing) across multiple distinct networks. |
 | **Protocol Data Unit (PDU)** | **Packet** (or Datagram) |
 | **Addressing Used** | **Logical IP Address** (32-bit IPv4 like `192.168.1.1` or 128-bit IPv6 like `2001:db8::1`). |
-| **Key Protocols** | IPv4, IPv6, ICMP (ping/traceroute), ARP (L2/L3 glue), IGMP, OSPF, BGP, RIP. |
+| **Key Protocols** | IPv4, IPv6, ICMP, IGMP, OSPF, ARP, RARP. *(Note: ARP/RARP in practice sit between L2 and L3; BGP and RIP functionally compute L3 routes but operate at the Application Layer over TCP/UDP).* |
 | **Operating Devices** | **Router**, Layer 3 Switch (Multilayer Switch). |
 | **Real-World Example** | A router in Mumbai receiving a packet destined for a server in Chicago and selecting the next-hop interface toward London. |
 | **What Breaks If It Fails?** | Host can communicate with local LAN computers, but cannot access external networks or the Internet (`No route to host`, ping to default gateway fails). |
@@ -167,7 +167,7 @@ Bottom (Hardware Focus)
 | **Primary Job** | Directly provides network communication services to user applications and end-user software processes. |
 | **Protocol Data Unit (PDU)** | **Data / Message** |
 | **Addressing Used** | Uniform Resource Identifiers (URIs / URLs, e.g., `https://example.com`), Email addresses. |
-| **Key Protocols** | HTTP, HTTPS, DNS, DHCP, SMTP, POP3, IMAP, FTP, SFTP, SSH, Telnet, SNMP, NTP. |
+| **Key Protocols** | HTTP, HTTPS, DNS, DHCP, SMTP, POP3, IMAP, FTP, SFTP, SSH, Telnet, SNMP, NTP, BGP (runs over TCP 179), RIP (runs over UDP 520). |
 | **Operating Devices** | Application Layer Firewalls (WAF), Reverse Proxies (Nginx, HAProxy), API Gateways. |
 | **Real-World Example** | Google Chrome sending an `HTTP GET /index.html` request header to an Apache web server. |
 | **What Breaks If It Fails?** | The network connection is fully alive, but the application reports HTTP error codes (`404 Not Found`, `500 Internal Server Error`, `503 Service Unavailable`). |

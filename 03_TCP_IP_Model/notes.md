@@ -78,19 +78,22 @@ A frequent source of confusion in university and competitive exams is where spec
 
 | Protocol | Full Name | Academic / GATE Exam Answer | Real-World Implementation Reality | Architectural Explanation |
 |---|---|:---:|:---:|---|
-| **ARP** | Address Resolution Protocol | **Network Layer (Layer 3)** *(or Layer 2.5)* | Encapsulated directly inside **Layer 2 Ethernet frames** (EtherType `0x0806`). | ARP does not use IP headers; it is an L2 broadcast message whose sole purpose is to resolve an L3 IPv4 address to an L2 MAC address. |
+| **ARP** | Address Resolution Protocol | **Network Layer (Layer 3)** | Encapsulated directly inside **Layer 2 Ethernet frames** (EtherType `0x0806`). | In practice sits between L2 and L3. ARP does not use IP headers; it is an L2 broadcast message whose sole purpose is to resolve an L3 IPv4 address to an L2 MAC address. |
+| **RARP** | Reverse Address Resolution Protocol | **Network Layer (Layer 3)** | Encapsulated inside **Layer 2 Ethernet frames** (EtherType `0x8035`). | Legacy protocol replaced by BOOTP/DHCP; maps physical MAC back to logical IPv4. |
 | **ICMP** | Internet Control Message Protocol | **Network Layer (Layer 3)** | Encapsulated inside **IPv4 packets** (IP Protocol `1`). | Even though ICMP is wrapped inside an IP packet just like TCP or UDP, it is an integral companion to IP for error reporting and diagnostics (`ping`, `traceroute`). |
 | **IGMP** | Internet Group Management Protocol | **Network Layer (Layer 3)** | Encapsulated inside **IPv4 packets** (IP Protocol `2`). | Used by hosts and adjacent routers to establish multicast group memberships. |
+| **OSPF** | Open Shortest Path First | **Network Layer (Layer 3)** | Encapsulated directly in **IP packets** (IP Protocol `89`). | An interior gateway routing protocol. It bypasses TCP and UDP entirely to calculate shortest path trees. |
+| **BGP** | Border Gateway Protocol | **Application Layer (Layer 7 / 5)** | Runs over **TCP port 179**. | Connects global autonomous systems. Functionally an L3 path-vector routing protocol, but implemented at the Application Layer over a TCP transport connection. |
+| **RIP** | Routing Information Protocol | **Application Layer (Layer 7 / 5)** | Runs over **UDP port 520**. | Functionally an L3 distance-vector routing protocol, but implemented at the Application Layer over UDP datagrams. |
 | **DHCP** | Dynamic Host Configuration Protocol | **Application Layer (Layer 7 / 5)** | Runs over **UDP ports 67 (server) & 68 (client)**. | Although DHCP assigns Layer 3 IP configuration, it executes as an application-level client-server protocol. |
 | **DNS** | Domain Name System | **Application Layer (Layer 7 / 5)** | Runs over **UDP & TCP port 53**. | Resolves human-readable domain names to IP addresses. |
-| **OSPF** | Open Shortest Path First | **Network Layer (Layer 3)** | Encapsulated directly in **IP packets** (IP Protocol `89`). | An interior gateway routing protocol. It bypasses TCP and UDP entirely to calculate shortest path trees. |
-| **RIP** | Routing Information Protocol | **Application Layer (Implementation)** / **Network Layer (Function)** | Runs over **UDP port 520**. | Functionally a routing protocol (L3), but implemented as a user-space daemon using UDP datagrams. |
-| **BGP** | Border Gateway Protocol | **Application Layer (Implementation)** / **Network Layer (Function)** | Runs over **TCP port 179**. | Connects global autonomous systems. Functionally an L3 path-vector routing protocol, but runs over an established TCP transport connection for reliability. |
 
-> **🎯 Exam Tip: How to Answer in GATE vs. Interviews:**  
-> - If an exam asks: *"At which layer does ICMP operate?"* $\rightarrow$ Answer **Network Layer (Layer 3)**.  
-> - If an exam asks: *"At which layer does ARP operate?"* $\rightarrow$ Answer **Network Layer (Layer 3)** or **Data Link Layer (Layer 2)** depending on options; if both appear, cite it as the **L2/L3 interface protocol**.  
-> - If an interviewer asks: *"Does BGP use TCP or UDP?"* $\rightarrow$ Answer: **BGP uses TCP port 179**, making it an application-level implementation that performs network-layer path vector routing.
+> **🎯 Exam Tip: How to Answer in GATE vs. Interviews ("Exam Answer First, Real-World Note Second"):**  
+> - If an exam asks: *"At which layer does ARP / RARP operate?"* $\rightarrow$ Answer **Network Layer (Layer 3)** (Add note: in practice it sits between L2 and L3).  
+> - If an exam asks: *"At which layer does ICMP / IGMP / OSPF operate?"* $\rightarrow$ Answer **Network Layer (Layer 3)**.  
+> - If an exam asks: *"At which layer does BGP operate?"* $\rightarrow$ Answer **Application Layer** (runs over TCP port 179; functionally path-vector routing).  
+> - If an exam asks: *"At which layer does RIP operate?"* $\rightarrow$ Answer **Application Layer** (runs over UDP port 520; functionally distance-vector routing).  
+> - If an exam asks: *"What layer devices are routers, switches, and hubs?"* $\rightarrow$ Answer **Router = Layer 3 device, Switch = Layer 2 device, Hub = Layer 1 device**.
 
 ---
 

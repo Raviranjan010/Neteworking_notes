@@ -119,7 +119,7 @@
 
 ### Q10. What layer does Address Resolution Protocol (ARP) belong to?
 - **Level:** Hard (Classic Trick Question)
-- **30-Second Summary:** ARP operates as the "glue" between Layer 2 and Layer 3. It encapsulates inside a Layer 2 Ethernet frame (EtherType `0x0806`), but its job is to resolve a Layer 3 IPv4 address into a Layer 2 MAC address. Most certification exams classify ARP at **Layer 3** (or Layer 2.5).
+- **30-Second Summary:** **Exam Answer First:** ARP belongs to the **Network Layer (Layer 3)** (or L2/L3 interface). Standard textbooks (Forouzan) and exams (GATE) classify ARP at Layer 3 because it operates with logical IP addresses to enable network layer delivery. **Real-World Note Second:** In practice, ARP sits between Layer 2 and Layer 3 (Layer 2.5); it encapsulates directly into Layer 2 Ethernet frames (`EtherType = 0x0806`) without an IP header.
 
 ---
 

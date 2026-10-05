@@ -396,7 +396,7 @@ SMTP, DNS, and DHCP are Application layer protocols. TCP is Layer 4 (Transport).
 <details><summary><b>Answer & Explanation</b></summary>
 
 **Answer: A, B, C**  
-IP, ICMP, and ARP operate at Layer 3 (ARP is the L2/L3 interface protocol). UDP is Layer 4.
+IP, ICMP, and ARP operate at Layer 3 in standard exam keys (with ARP functionally serving L3; in engineering practice it sits between L2 and L3). UDP is Layer 4.
 </details>
 
 #### Q35. [Concept] Which of the following statements regarding Encapsulation are true?

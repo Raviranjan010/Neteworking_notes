@@ -10,7 +10,7 @@
 |:---:|---|---|:---:|---|---|
 | **5** | **Application** | Application | Data / Stream | HTTP(S), DNS, DHCP, SSH, SMTP, BGP, RIP | Browser, WAF, API Gateway, DNS Server |
 | **4** | **Transport** | Host-to-Host | Segment (TCP) / Datagram (UDP) | TCP, UDP, SCTP, QUIC | OS Kernel TCP Stack, L4 Load Balancer |
-| **3** | **Network (Internet)**| Internet | Packet / Datagram | IPv4, IPv6, ICMP, IGMP, OSPF, ARP (L2.5) | Router, Layer 3 Switch |
+| **3** | **Network (Internet)**| Internet | Packet / Datagram | IPv4, IPv6, ICMP, IGMP, OSPF, ARP, RARP | Router, Layer 3 Switch |
 | **2** | **Data Link** | Network Access | Frame | Ethernet (802.3), Wi-Fi (802.11), PPP | Layer 2 Switch, Bridge, NIC |
 | **1** | **Physical** | Network Access | Bit | 1000BASE-T, Fiber, Radio (RF) | Hub, Repeater, PHY Transceiver |
 
@@ -20,7 +20,8 @@
 
 | Protocol | Function | Lower-Layer Transport Encapsulation | Official Architectural Layer |
 |---|---|---|---|
-| **ARP** | Resolves IPv4 $\rightarrow$ MAC | Direct Ethernet (`EtherType = 0x0806`) | **Layer 2 / 2.5 (Link / Network helper)** |
+| **ARP** | Resolves IPv4 $\rightarrow$ MAC | Direct Ethernet (`EtherType = 0x0806`) | **Layer 3 (Network Layer)** *(Note: in practice sits between L2 and L3)* |
+| **RARP** | Resolves MAC $\rightarrow$ IPv4 | Direct Ethernet (`EtherType = 0x8035`) | **Layer 3 (Network Layer)** *(Note: legacy L3 resolution)* |
 | **ICMP** | Diagnostics & error reporting | Direct IPv4 (`Protocol = 1`) | **Layer 3 (Network Layer)** |
 | **IGMP** | Multicast group membership | Direct IPv4 (`Protocol = 2`) | **Layer 3 (Network Layer)** |
 | **OSPF** | Link-state interior routing | Direct IPv4 (`Protocol = 89`) | **Layer 3 (Network Layer)** |
@@ -110,6 +111,6 @@ Sender (Host A)  -->  [Router 1]  -->  [Router 2]  -->  Receiver (Host B)
 
 1. **"Ping uses UDP or TCP":** False! Ping uses **ICMP directly over IP** (Protocol 1). It has no transport layer ports.
 2. **"Traceroute routers respond because of ping":** False! Routers respond with ICMP Type 11 because the probe packet's **TTL expired to 0** at their interface.
-3. **"ARP operates at Layer 3":** Contested, but officially **Layer 2 / 2.5**. ARP messages are framed directly in Ethernet (`EtherType 0x0806`) without an IP header.
+3. **"What layer does ARP belong to?":** For all standard exams (GATE, university curricula), the EXAM answer is strictly **Network Layer (Layer 3)** (enables L3 logical addressing). Real-world note: In practice, it sits between L2 and L3 (Layer 2.5) because it encapsulates directly into Ethernet frames (`EtherType 0x0806`) without an IP header.
 4. **"Routers change IP addresses":** Standard IP routers **never** modify source or destination IP addresses. Only NAT/PAT routers do.
-5. **"BGP and RIP are Layer 3 protocols":** Conceptually they compute L3 routes, but BGP is encapsulated in **TCP (Port 179)** and RIP in **UDP (Port 520)**, making their software implementation Layer 7.
+5. **"BGP and RIP are Layer 3 protocols":** Exam answer: **Application Layer** (BGP runs on TCP port 179; RIP runs on UDP port 520). Note: Functionally they compute routing paths for Layer 3, but their software implementation resides at Layer 7.

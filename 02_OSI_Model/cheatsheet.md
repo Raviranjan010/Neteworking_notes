@@ -8,11 +8,11 @@
 
 | # | Layer Name | PDU | Primary Function | Addressing | Operating Devices | Key Protocols |
 |:---:|---|:---:|---|:---:|---|---|
-| **7** | **Application** | Data | User network services & UI | URI / URL | WAF, API Gateway, Reverse Proxy | HTTP, HTTPS, DNS, DHCP, SSH, SMTP |
+| **7** | **Application** | Data | User network services & UI | URI / URL | WAF, API Gateway, Reverse Proxy | HTTP, HTTPS, DNS, DHCP, SSH, SMTP, BGP, RIP |
 | **6** | **Presentation** | Data | Syntax, encryption, compression | Syntax tags | OS Runtimes, Middleware | JSON, XML, ASCII, UTF-8, JPEG, gzip |
 | **5** | **Session** | Data | Dialog control & checkpoints | Sockets / Session IDs | OS Network Subsystem | RPC, NetBIOS, SOCKS5 |
 | **4** | **Transport** | Segment / Datagram | End-to-end reliability & ports | 16-bit Port (0–65535) | L4 Firewall, L4 Load Balancer | TCP, UDP, SCTP, QUIC |
-| **3** | **Network** | Packet | Routing & logical addressing | 32-bit IP / 128-bit IPv6 | Router, Layer 3 Switch | IPv4, IPv6, ICMP, ARP, OSPF, BGP |
+| **3** | **Network** | Packet | Routing & logical addressing | 32-bit IP / 128-bit IPv6 | Router, Layer 3 Switch | IPv4, IPv6, ICMP, IGMP, ARP, RARP, OSPF |
 | **2** | **Data Link** | Frame | Hop-to-hop framing & error check | 48-bit MAC Address | Layer 2 Switch, Bridge, NIC | Ethernet (802.3), Wi-Fi (802.11 MAC) |
 | **1** | **Physical** | Bit | Raw bit signaling over media | None | Multiport Hub, Repeater, Modem | 1000BASE-T, Cables, Fiber, RJ45 |
 
