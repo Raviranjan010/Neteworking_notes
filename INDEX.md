@@ -53,11 +53,15 @@ A comprehensive directory of every topic, module, guide, cheatsheet, and lab in 
 - `04_Physical_Layer/diagrams.md` *(Authoring scheduled in roadmap)*
 - `04_Physical_Layer/mcqs.md` *(Authoring scheduled in roadmap)*
 
-### [05. Data Link Layer](05_Data_Link_Layer/) *(Planned)*
+### [05. Data Link Layer](05_Data_Link_Layer/README.md)
 *Node-to-node framing, error detection (CRC), flow control (ARQ), CSMA/CD, and Ethernet.*
-- `05_Data_Link_Layer/notes.md` *(Authoring scheduled in roadmap)*
-- `05_Data_Link_Layer/diagrams.md` *(Authoring scheduled in roadmap)*
-- `05_Data_Link_Layer/mcqs.md` *(Authoring scheduled in roadmap)*
+- [05_Data_Link_Layer/README.md](05_Data_Link_Layer/README.md) — Module overview & learning roadmap
+- [05_Data_Link_Layer/notes.md](05_Data_Link_Layer/notes.md) — Comprehensive deep-dive notes, formulas, and theory
+- [05_Data_Link_Layer/diagrams.md](05_Data_Link_Layer/diagrams.md) — Mermaid architectural, timing, and sequence diagrams
+- [05_Data_Link_Layer/numericals.md](05_Data_Link_Layer/numericals.md) — Solved calculations across 3 levels (verified with Python)
+- [05_Data_Link_Layer/mcqs.md](05_Data_Link_Layer/mcqs.md) — 55 practice questions (MCQ, MSQ, NAT, Scenarios)
+- [05_Data_Link_Layer/interview_qa.md](05_Data_Link_Layer/interview_qa.md) — Technical interview questions with model answers
+- [05_Data_Link_Layer/cheatsheet.md](05_Data_Link_Layer/cheatsheet.md) — One-page quick revision sheet
 
 ### [06. Network Devices & LAN](06_Network_Devices_and_LAN/) *(Planned)*
 *Hubs, switches, routers, collision/broadcast domains, VLANs, and trunking.*

@@ -38,7 +38,7 @@
 | **02** | OSI Model | ✅ | ✅ | ✅ | ➖ | ✅ | ✅ | ✅ |
 | **03** | TCP/IP Model | ✅ | ✅ | ✅ | ➖ | ✅ | ✅ | ✅ |
 | **04** | Physical Layer | 📋 | 📋 | 📋 | 📋 | 📋 | 📋 | 📋 |
-| **05** | Data Link Layer | 📋 | 📋 | 📋 | 📋 | 📋 | 📋 | 📋 |
+| **05** | Data Link Layer | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
 | **06** | Network Devices & LAN | 📋 | 🚧 | 📋 | 📋 | 🚧 | 📋 | 📋 |
 | **07** | IP Addressing | 📋 | 🚧 | 🚧 | 📋 | 🚧 | 📋 | 📋 |
 | **08** | Subnetting, CIDR & VLSM | 📋 | 🚧 | 🚧 | 📋 | 🚧 | 📋 | 📋 |

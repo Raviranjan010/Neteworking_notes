@@ -61,4 +61,4 @@ flowchart LR
 ## ⬅️ Navigation
 - **Module Index:** [INDEX.md](../INDEX.md)
 - **Previous Module:** [03_TCP_IP_Model](../03_TCP_IP_Model/README.md)
-- **Next Module:** [06_Network_Devices_and_LAN](../06_Network_Devices_and_LAN/README.md)
+- **Next Module:** [06_Network_Devices_and_LAN](../06_Network_Devices_and_LAN/)
