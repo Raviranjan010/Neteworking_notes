@@ -159,11 +159,83 @@
 
 ---
 
+## Flow Control & ARQ Protocols (05b)
+
+### Q21. What is the fundamental difference between Flow Control and Congestion Control?
+- **Level:** Foundational / Systems
+- **30-Second Summary:** Flow control is **point-to-point / end-to-end**: it prevents a fast transmitter from overwhelming the **receiver's local memory buffer**. Congestion control is **network-wide**: it prevents multiple transmitters from injecting more traffic than **intermediate routers, switches, and transit links** can physically carry.
+- **Deep Answer:** Flow control is governed by explicit receiver buffer advertisements (e.g., TCP Receive Window `rcv_wnd` or 802.3x Pause frames). Congestion control is inferred from packet loss, latency growth, or explicit network signaling (TCP `cwnd`, ECN). See [notes_05b_flow_control.md#12-flow-control-vs-congestion-control](notes_05b_flow_control.md#12-flow-control-vs-congestion-control).
+
+---
+
+### Q22. Why is Stop-and-Wait ARQ catastrophically inefficient on high Bandwidth-Delay Product (BDP) links?
+- **Level:** Medium
+- **30-Second Summary:** In Stop-and-Wait, the sender transmits one frame and then idles for an entire Round-Trip Time ($2T_p$) waiting for confirmation. On high-delay links (such as satellite or transoceanic fiber), propagation delay dwarfs transmission delay ($a = T_p / T_t \gg 1$), resulting in efficiency $\eta = \frac{1}{1 + 2a} \to 0$. The transmission pipe remains $>95\%$ empty.
+- **Deep Answer:** See numerical verification on satellite links in [numericals_05b_flow_control.md#problem-6-geostationary-satellite-link-with-stop-and-wait](numericals_05b_flow_control.md#problem-6-geostationary-satellite-link-with-stop-and-wait).
+
+---
+
+### Q23. How does Go-Back-N handle out-of-order frames, and why does this cause poor throughput on noisy links?
+- **Level:** Hard
+- **30-Second Summary:** Go-Back-N maintains a receiver window of strictly $W_r = 1$. If Frame $i$ is corrupted or lost, all subsequent undamaged frames ($i+1, i+2, \dots$) arriving at the receiver are discarded immediately. When the sender's timer for Frame $i$ expires, the sender must retransmit the entire pending window of $N$ frames, causing a retransmission storm.
+- **Deep Answer:** Under error probability $P$, average transmissions per frame is $\frac{1 + (N-1)P}{1-P}$. Even low error rates drastically degrade GBN efficiency. See [notes_05b_flow_control.md#72-go-back-n-arq-under-loss](notes_05b_flow_control.md#72-go-back-n-arq-under-loss).
+
+---
+
+### Q24. How does Selective Repeat ARQ resolve the GBN retransmission storm, and what is the engineering trade-off?
+- **Level:** Hard
+- **30-Second Summary:** Selective Repeat expands the receiver window to $W_r = 2^{k-1}$. When an out-of-order frame arrives, it is accepted and stored in the receiver's buffer. The sender retransmits **only the specific missing frame**. Once it arrives, the receiver releases the buffered frames in order.
+- **Trade-off:** High memory usage (must allocate buffer slots for all $W_r$ frames), individual timers per frame at sender, and complex sequence sorting logic in firmware/software. See [diagrams_05b_flow_control.md#9-selective-repeat-sr-arq-single-frame-recovery-via-out-of-order-buffering](diagrams_05b_flow_control.md#9-selective-repeat-sr-arq-single-frame-recovery-via-out-of-order-buffering).
+
+---
+
+### Q25. Why must the sender window in Go-Back-N be $W_s \le 2^k - 1$ instead of $2^k$?
+- **Level:** High-Yield GATE / Deep Technical
+- **30-Second Summary:** If $W_s = 2^k$, the sequence number of the first frame of the next generation becomes identical to the first frame of the current generation. If all ACKs for a full window are lost in transit, the sender retransmits Frame 0. The receiver, having already advanced to expect Frame 0 of the next cycle, cannot distinguish the old duplicate from new data, causing silent undetected data duplication.
+- **Deep Answer:** By capping $W_s \le 2^k - 1$, the expected frame sequence number is never identical to any unacknowledged frame in flight. See [notes_05b_flow_control.md#62-the-overlapping-window-proof-for-go-back-n](notes_05b_flow_control.md#62-the-overlapping-window-proof-for-go-back-n).
+
+---
+
+### Q26. Why must Selective Repeat allocate window size $W_s \le 2^{k-1}$?
+- **Level:** High-Yield GATE / Deep Technical
+- **30-Second Summary:** In Selective Repeat, both sender and receiver maintain active windows. If $W_s > 2^{k-1}$ (for example, $W_s = W_r = 3$ with $k=2$), if all ACKs are lost, the receiver window slides forward to overlap with sequence numbers from the previous cycle. A retransmitted frame from the old cycle will fall inside the receiver's new window and be mistakenly accepted as fresh data.
+- **Rule:** The sum of sender and receiver windows must never exceed the sequence space: $W_s + W_r \le 2^k$. When $W_s = W_r$, $W_s \le 2^{k-1}$. See [notes_05b_flow_control.md#63-the-overlapping-window-proof-for-selective-repeat](notes_05b_flow_control.md#63-the-overlapping-window-proof-for-selective-repeat).
+
+---
+
+### Q27. What is Piggybacking, and what prevents a transmitter from stalling if no reverse traffic exists?
+- **Level:** Medium
+- **30-Second Summary:** Piggybacking embeds acknowledgment numbers into the headers of reverse-direction data packets, halving standalone ACK framing overhead. To prevent transmission stalls when the reverse node has no data to send, a **delayed ACK timer** runs (typically 50–200 ms). When the timer expires, an independent standalone ACK is dispatched immediately.
+- **Deep Answer:** See [diagrams_05b_flow_control.md#12-piggybacking-bidirectional-data-flow-timeline](diagrams_05b_flow_control.md#12-piggybacking-bidirectional-data-flow-timeline).
+
+---
+
+### Q28. How is optimal sliding window size derived from the Bandwidth-Delay Product (BDP)?
+- **Level:** Medium / Core Networking
+- **30-Second Summary:** To achieve 100% channel utilization without pausing, the sender must transmit enough bits during one Round-Trip Time to completely fill the transmission medium pipe. Thus:
+  $$\text{Optimal Window Bits} = \text{BDP} = \text{Bandwidth} \times \text{RTT}$$
+  Dividing by frame length $L$, the window in frames is $N_{\text{opt}} = 1 + 2a$ where $a = T_p / T_t$.
+
+---
+
+### Q29. Why does modern wired Ethernet (802.3) drop corrupt frames silently rather than providing Layer 2 ARQ?
+- **Level:** Real-World Architecture
+- **30-Second Summary:** Fiber and twisted-pair copper have Bit Error Rates (BER) below $10^{-12}$. Over 99.9999% of frames arrive intact. Maintaining state tables, sequence buffers, and retransmission timers at 100 Gbps in switch hardware would massively increase silicon cost and latency. Dropping corrupt frames in hardware ASIC and delegating rare retransmissions to end-to-end Layer 4 TCP is far more efficient.
+
+---
+
+### Q30. How does TCP Window Scaling (RFC 1323) overcome the classic 16-bit sliding window limitation?
+- **Level:** Production Systems / Performance Engineering
+- **30-Second Summary:** The standard TCP header allocates 16 bits for the Receive Window field, capping the maximum window at $2^{16} - 1 = 65,535\text{ bytes}$ (64 KB). On high-speed, long-fat networks (LFNs, e.g., 10 Gbps with 50 ms RTT, where $\text{BDP} \approx 62.5\text{ MB}$), throughput would be bottlenecked at $\approx 10\text{ Mbps}$. RFC 1323 introduces a Window Scale option during the SYN handshake that left-shifts the 16-bit window value up to 14 bits, enabling window sizes up to $1\text{ GB}$.
+
+---
+
 ## ⬅️ Navigation
-- **Module Overview:** [README.md](README.md)
-- **Deep-Dive Notes:** [notes.md](notes.md)
-- **Solved Numericals:** [numericals.md](numericals.md)
-- **Visual Diagrams:** [diagrams.md](diagrams.md)
+- **Module Index:** [INDEX.md](../INDEX.md)
+- **Deep-Dive Notes:** [notes.md](notes.md) | [notes_05b_flow_control.md](notes_05b_flow_control.md)
+- **Solved Numericals:** [numericals.md](numericals.md) | [numericals_05b_flow_control.md](numericals_05b_flow_control.md)
+- **Visual Diagrams:** [diagrams.md](diagrams.md) | [diagrams_05b_flow_control.md](diagrams_05b_flow_control.md)
 - **Practice Questions:** [mcqs.md](mcqs.md)
 - **One-Page Cheatsheet:** [cheatsheet.md](cheatsheet.md)
-- **Next Sub-step:** [05b Flow Control & ARQ](../05_Data_Link_Layer/)
+- **Next Sub-step:** [05c MAC Protocols & Ethernet 802.3](../05_Data_Link_Layer/)
+

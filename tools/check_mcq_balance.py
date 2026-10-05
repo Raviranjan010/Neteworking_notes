@@ -35,7 +35,7 @@ def check_mcq_balance(file_path: Path, root: Path) -> tuple[bool, str]:
     except Exception as e:
         return False, f"❌ {rel_path}: Could not read file: {e}"
 
-    part_a_matches = list(re.finditer(r'^##\s+.*?Part A.*$', content, re.MULTILINE))
+    part_a_matches = list(re.finditer(r'^##\s+.*?\bPart A\b(?!.*?(?:Answer Key|Statistics|Summary)).*$', content, re.MULTILINE))
     if not part_a_matches:
         return True, f"ℹ️  {rel_path}: No 'Part A' heading found (skipped)"
 
@@ -60,7 +60,7 @@ def check_mcq_balance(file_path: Path, root: Path) -> tuple[bool, str]:
         after_text_start = m_a.end()
         next_part_a_start = part_a_matches[idx + 1].start() if idx + 1 < len(part_a_matches) else len(content)
 
-        m_b = re.search(r'^##\s+.*?Part B.*$', content[after_text_start:next_part_a_start], re.MULTILINE)
+        m_b = re.search(r'^##\s+.*?\bPart B\b(?!.*?(?:Answer Key|Statistics|Summary)).*$', content[after_text_start:next_part_a_start], re.MULTILINE)
         part_a_end = (after_text_start + m_b.start()) if m_b else next_part_a_start
 
         part_a_text = content[after_text_start:part_a_end]
