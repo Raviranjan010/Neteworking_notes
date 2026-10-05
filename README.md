@@ -94,7 +94,7 @@ flowchart TD
 
 | # | Module Name | Core Highlights | Est. Time | GATE Weight | Interview Weight | Status |
 |---|---|---|:---:|:---:|:---:|:---:|
-| **01** | [01_Fundamentals](01_Fundamentals/notes.md) | Topologies, Delays (Tt, Tp, Tq, Tproc), Switching, BDP | 3–4 hrs | Medium | High | 🚧 Rebuilding |
+| **01** | [01_Fundamentals](01_Fundamentals/README.md) | Topologies, Delays (Tt, Tp, Tq, Tproc), Switching, BDP | 3–4 hrs | Medium | High | ✅ Complete |
 | **02** | [02_OSI_Model](02_OSI_Model/notes.md) | 7 Layers, Encapsulation, Headers/Trailers, Troubleshooting | 3–4 hrs | Low–Med | Very High | 🚧 Rebuilding |
 | **03** | [03_TCP_IP_Model](03_TCP_IP_Model/notes.md) | 5-Layer Hybrid Model, Packet Hop Journey, Protocol Matrix | 3–4 hrs | Medium | High | 🚧 Rebuilding |
 | **04** | [04_Physical_Layer](04_Physical_Layer/) | Nyquist, Shannon Capacity, Line Coding, Media, Modulation | 4–5 hrs | Medium | Medium | 📋 Planned (Phase 2) |

@@ -34,7 +34,7 @@
 
 | # | Module Name | `README.md` | `notes.md` | `diagrams.md` | `numericals.md` | `mcqs.md` | `interview_qa.md` | `cheatsheet.md` |
 |:---:|---|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
-| **01** | Fundamentals | 📋 | 🚧 | 🚧 | 📋 | 🚧 | 📋 | 📋 |
+| **01** | Fundamentals | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
 | **02** | OSI Model | 📋 | 🚧 | 🚧 | ➖ | 🚧 | 📋 | 📋 |
 | **03** | TCP/IP Model | 📋 | 🚧 | 🚧 | ➖ | 🚧 | 📋 | 📋 |
 | **04** | Physical Layer | 📋 | 📋 | 📋 | 📋 | 📋 | 📋 | 📋 |

@@ -62,4 +62,4 @@ None! This is the starting point of the entire curriculum. You only need basic c
 
 ## ⬅️ Navigation
 - **Previous:** [START_HERE.md](../START_HERE.md) / [INDEX.md](../INDEX.md)
-- **Next:** [02_OSI_Model](../02_OSI_Model/README.md)
+- **Next:** [02_OSI_Model](../02_OSI_Model/notes.md)

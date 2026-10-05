@@ -410,4 +410,4 @@ Jitter is the **variation in latency** (packet arrival delay variance) across su
 - **Visual Diagrams:** [diagrams.md](diagrams.md)
 - **Solved Numericals:** [numericals.md](numericals.md)
 - **Practice Questions:** [mcqs.md](mcqs.md)
-- **Next Module:** [02_OSI_Model](../02_OSI_Model/README.md)
+- **Next Module:** [02_OSI_Model](../02_OSI_Model/notes.md)
