@@ -1,7 +1,7 @@
 # 🤝 Repository Handoff & Project Memory
 
 ### 1. Current Position
-- **Current Position:** Ready for Phase 2 — Module 04 (Physical Layer).
+- **Current Position:** Sub-step 05a Complete. Ready for Sub-step 05b: Flow Control & ARQ Protocols (Stop-and-Wait, Go-Back-N, Selective Repeat, Piggybacking).
 - **Branch:** `main` | **Target Coverage:** 20 Modules.
 
 ### 2. Done Modules & Commit Hashes
@@ -10,6 +10,7 @@
 - **Module 02 (OSI Model):** `a74c409` (Notes, 10 Diagrams, 55 MCQs, Interview QA, Cheatsheet)
 - **Module 03 (TCP/IP Model):** `a73c3b3` (Notes, 10 Diagrams, 55 MCQs, Interview QA, Cheatsheet)
 - **Pre-Phase 2 Tooling & Setup:** `757c63e` (Templates, lint, links, balance, index, glossary, new_module)
+- **Sub-step 05a (Framing & Error Control):** `91745b4` (Notes, 12 Diagrams, Numericals, 55 MCQs, Interview QA, Cheatsheet, README, verify_datalink.py)
 
 ### 3. Conventions & Efficiency Rules (Strict)
 - **Chat Scope:** 1 chat = 1 module (or sub-step 05a/05b/05c, 11a/11b, 12a/12b, 13a/13b). At start, read ONLY `HANDOFF.md` + current module's part of `MASTER_PROMPT.md`.
@@ -27,11 +28,12 @@
   - **RIP:** Application Layer (L7) *(runs over UDP 520; functionally distance-vector routing)*.
   - **DHCP / DNS:** Application Layer (L7) *(UDP 67/68, UDP/TCP 53)*.
   - **Hardware:** Router = L3 device, Switch = L2 device, Hub = L1 device.
+  - **L2 Reliability:** L2 guarantees framing & error detection (CRC); invalid FCS dropped silently without ICMP or retransmission (left to L4 TCP).
 
 ### 5. Facts Needing Human Review
-- None blocking. All formulas in 01 verified with Python. Modules 01–03 patched.
+- None blocking. All calculations verified with `tools/verify/verify_datalink.py`. All quality gates 100% PASS.
 
 ### 6. Next 3 Actions
-1. Author **04_Physical_Layer** (Signals, Nyquist/Shannon capacities, transmission media, line coding, PCM, numericals, 55 MCQs).
-2. Author **05_Data_Link_Layer** (Framing, CRC, Stop-and-Wait/GBN/SR ARQ, CSMA/CD, Ethernet, numericals, 55 MCQs).
-3. Validate Phase 2 with automated quality gate tooling (`lint.py`, `check_links.py`, `check_mcq_balance.py`).
+1. Author **Sub-step 05b** (Flow Control & ARQ: Stop-and-Wait, Go-Back-N, Selective Repeat, efficiency formulas $\eta$, window size math, timer calculations).
+2. Author **Sub-step 05c** (Medium Access Control & LANs: ALOHA, CSMA, CSMA/CD, CSMA/CA, Ethernet 802.3, MAC addressing, collision domains).
+3. Author **Module 04 (Physical Layer)** or proceed per curriculum sequence.
