@@ -136,7 +136,7 @@ def check_file(path: Path, root: Path) -> list:
     if path.name == "notes.md" and any(re.match(r'^\d{2}_', p) for p in parts):
         has_readme = (path.parent / "README.md").exists()
         if has_readme:
-            has_next = bool(re.search(r'\bNext\b[^:\n]*:\s*\[', content, re.IGNORECASE))
+            has_next = bool(re.search(r'Next[^\n]*\[.*?\]\(.*?\)', content, re.IGNORECASE))
             if not has_next and "20_" not in rel_path:
                 errors.append(f"{rel_path}: Missing 'Next:' or 'Next Module:' navigation link at end of file")
 
