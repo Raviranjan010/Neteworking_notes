@@ -19,7 +19,7 @@ While OSI model is theoretical, TCP/IP is **practical and implemented**:
 - More flexible and adaptable
 - Proven to work at global scale
 
-### 1.3 Real-World Analogy:快递 System (Courier)
+### 1.3 Real-World Analogy: Courier System
 
 **Application Layer:** You order something online (decide what to send)
 **Transport Layer:** Choose delivery type - registered (TCP) or regular (UDP)
