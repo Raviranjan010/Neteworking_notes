@@ -40,8 +40,8 @@
 ---
 
 ### C
-- **CAN (Campus Area Network):** A network connecting multiple local area networks across a contiguous educational or corporate campus (1–5 km). See [01_Fundamentals](01_Fundamentals/notes.md).
 - **CAM Table (Content Addressable Memory):** A high-speed hardware table in a network switch that maps MAC addresses to physical switch port numbers. See [06_Network_Devices_and_LAN](06_Network_Devices_and_LAN/notes.md).
+- **CAN (Campus Area Network):** A network connecting multiple local area networks across a contiguous educational or corporate campus (1–5 km). See [01_Fundamentals](01_Fundamentals/notes.md).
 - **CDN (Content Delivery Network):** A geographically distributed network of proxy cache servers that delivers web content and media quickly to users based on location. See [15_Modern_Networking](15_Modern_Networking/).
 - **Checksum:** An error-detection value calculated by summing numerical chunks of a packet or header, used in IPv4, TCP, and UDP to detect bit inversions. See [05_Data_Link_Layer](05_Data_Link_Layer/) & [11_Transport_Layer](11_Transport_Layer/notes.md).
 - **CIDR (Classless Inter-Domain Routing):** An IP addressing scheme replacing rigid class boundaries with variable-length prefix masks (e.g. `/24`) to slow IPv4 exhaustion. See [08_Subnetting_CIDR_VLSM](08_Subnetting_CIDR_VLSM/notes.md).
@@ -49,8 +49,9 @@
 - **Collision Domain:** A physical network segment where data packets can collide with one another if two or more devices transmit simultaneously (e.g. shared hub or single half-duplex wire). See [06_Network_Devices_and_LAN](06_Network_Devices_and_LAN/notes.md).
 - **Congestion Window (`cwnd`):** A TCP state variable maintained by the sender that limits the number of unacknowledged bytes the sender may transmit to avoid overloading the network path. See [11_Transport_Layer](11_Transport_Layer/notes.md).
 - **CRC (Cyclic Redundancy Check):** A powerful polynomial-based error-detecting code used widely in Ethernet and Wi-Fi frames to detect burst errors. See [05_Data_Link_Layer](05_Data_Link_Layer/).
-- **CSMA/CD (Carrier Sense Multiple Access with Collision Detection):** A legacy half-duplex Ethernet MAC protocol where stations listen before transmitting and abort transmission upon detecting a collision. See [05_Data_Link_Layer](05_Data_Link_Layer/).
 - **CSMA/CA (Carrier Sense Multiple Access with Collision Avoidance):** A wireless MAC protocol (802.11) that avoids collisions using explicit inter-frame spacing, random backoff, and optional RTS/CTS exchanges. See [14_Wireless_and_Mobile](14_Wireless_and_Mobile/).
+- **CSMA/CD (Carrier Sense Multiple Access with Collision Detection):** A legacy half-duplex Ethernet MAC protocol where stations listen before transmitting and abort transmission upon detecting a collision. See [05_Data_Link_Layer](05_Data_Link_Layer/).
+- **Cyclic Redundancy Check (CRC):** An error-detecting code based on polynomial modulo-2 binary division using an agreed generator polynomial G(x). See [05_Data_Link_Layer](05_Data_Link_Layer/notes.md).
 
 ---
 
@@ -79,6 +80,7 @@
 - **Flow Control:** A mechanism preventing a fast sender from overwhelming a slow receiver with data faster than the receiver can buffer and process it. See [05_Data_Link_Layer](05_Data_Link_Layer/) & [11_Transport_Layer](11_Transport_Layer/notes.md).
 - **Forwarding:** The data-plane process of moving an incoming packet from a router's input port to the appropriate output port based on its destination IP address and routing table lookup. See [10_Routing](10_Routing/notes.md).
 - **Fragmentation:** The division of an IP datagram into smaller pieces by a router or sending host when the packet size exceeds the outgoing link's Maximum Transmission Unit (MTU). See [09_Network_Layer_Protocols](09_Network_Layer_Protocols/).
+- **Frame Check Sequence (FCS):** The trailing error-detection redundancy code (typically a 32-bit CRC) appended to a data link layer frame. See [05_Data_Link_Layer](05_Data_Link_Layer/notes.md).
 - **FTP (File Transfer Protocol):** An application-layer protocol using dual TCP connections (port 21 for commands, port 20 for data) to transfer files between client and server. See [12_Application_Layer](12_Application_Layer/notes.md).
 
 ---
