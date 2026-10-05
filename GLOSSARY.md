@@ -40,6 +40,7 @@
 ---
 
 ### C
+- **CAN (Campus Area Network):** A network connecting multiple local area networks across a contiguous educational or corporate campus (1–5 km). See [01_Fundamentals](01_Fundamentals/notes.md).
 - **CAM Table (Content Addressable Memory):** A high-speed hardware table in a network switch that maps MAC addresses to physical switch port numbers. See [06_Network_Devices_and_LAN](06_Network_Devices_and_LAN/notes.md).
 - **CDN (Content Delivery Network):** A geographically distributed network of proxy cache servers that delivers web content and media quickly to users based on location. See [15_Modern_Networking](15_Modern_Networking/).
 - **Checksum:** An error-detection value calculated by summing numerical chunks of a packet or header, used in IPv4, TCP, and UDP to detect bit inversions. See [05_Data_Link_Layer](05_Data_Link_Layer/) & [11_Transport_Layer](11_Transport_Layer/notes.md).
@@ -95,6 +96,7 @@
 ---
 
 ### I
+- **IXP (Internet Exchange Point):** A physical switching facility where multiple ISPs, CDNs, and cloud networks interconnect directly to exchange traffic without paying transit fees. See [01_Fundamentals](01_Fundamentals/notes.md).
 - **ICMP (Internet Control Message Protocol):** A supporting network-layer protocol (IP protocol 1) used by network devices and utilities like `ping` and `traceroute` to diagnose errors and report delivery problems. See [09_Network_Layer_Protocols](09_Network_Layer_Protocols/).
 - **IPv4:** The 32-bit connectionless Internet Protocol providing approximately 4.29 billion unique global addresses formatted as four decimal octets. See [07_IP_Addressing](07_IP_Addressing/notes.md).
 - **IPv6:** The 128-bit next-generation Internet Protocol providing $2^{128}$ unique addresses formatted as eight hexadecimal quartets. See [07_IP_Addressing](07_IP_Addressing/notes.md).
@@ -145,6 +147,9 @@
 ---
 
 ### S
+- **SAN (Storage Area Network):** A dedicated, specialized high-speed network providing block-level access to consolidated shared storage arrays (Fibre Channel, iSCSI). See [01_Fundamentals](01_Fundamentals/notes.md).
+- **Statistical Multiplexing:** A dynamic channel-sharing method where transmission capacity is allocated on demand to actively transmitting packets, maximizing link utilization for bursty traffic. See [01_Fundamentals](01_Fundamentals/notes.md).
+- **Store-and-Forward:** A switching technique where a packet must be completely received and verified for bit errors before being forwarded onto the next link. See [01_Fundamentals](01_Fundamentals/notes.md).
 - **Selective Repeat (SR):** An advanced sliding-window ARQ protocol where both sender and receiver maintain equal window sizes ($\le 2^{k-1}$); the receiver buffers out-of-order frames, and only lost frames are retransmitted. See [05_Data_Link_Layer](05_Data_Link_Layer/).
 - **Shannon Capacity:** The theoretical upper bound on the data rate of a noisy channel with bandwidth $B$ Hz and signal-to-noise ratio SNR: $C = B \log_2(1 + \text{SNR})$ bps. See [04_Physical_Layer](04_Physical_Layer/).
 - **Stop-and-Wait ARQ:** The simplest flow-control protocol where a sender transmits exactly one frame and waits for an acknowledgment before sending the next. See [05_Data_Link_Layer](05_Data_Link_Layer/).
@@ -154,6 +159,7 @@
 ---
 
 ### T
+- **Tier-1 ISP:** A global telecommunications backbone provider that owns transcontinental infrastructure and peers with other Tier-1 providers settlement-free. See [01_Fundamentals](01_Fundamentals/notes.md).
 - **TCP (Transmission Control Protocol):** A connection-oriented, reliable, byte-stream transport-layer protocol providing ordered delivery, flow control, and congestion control over IP. See [11_Transport_Layer](11_Transport_Layer/notes.md).
 - **Throughput:** The actual rate at which data is successfully delivered over a communication channel per unit of time (measured in bits/sec). See [01_Fundamentals](01_Fundamentals/notes.md).
 - **Transmission Delay ($T_t$):** The time required to push all bits of a packet onto the physical transmission medium ($T_t = \frac{\text{Packet Size (bits)}}{\text{Bandwidth (bps)}}$). See [01_Fundamentals](01_Fundamentals/notes.md).

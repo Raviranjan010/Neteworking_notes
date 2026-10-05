@@ -18,11 +18,15 @@ A comprehensive directory of every topic, module, guide, cheatsheet, and lab in 
 
 ## 📚 Core Modules (01–16)
 
-### [01. Fundamentals](01_Fundamentals/notes.md)
+### [01. Fundamentals](01_Fundamentals/README.md)
 *Core concept: Network models, components, topologies, transmission delays, and switching techniques.*
-- [01_Fundamentals/notes.md](01_Fundamentals/notes.md) — Comprehensive notes and theory
-- [01_Fundamentals/diagrams.md](01_Fundamentals/diagrams.md) — Topologies, delays, and switching diagrams
-- [01_Fundamentals/mcqs.md](01_Fundamentals/mcqs.md) — Practice questions & scenario challenges
+- [01_Fundamentals/README.md](01_Fundamentals/README.md) — Module overview & learning roadmap
+- [01_Fundamentals/notes.md](01_Fundamentals/notes.md) — Comprehensive notes, formulas, and theory
+- [01_Fundamentals/diagrams.md](01_Fundamentals/diagrams.md) — 10 Mermaid architectural & delay diagrams
+- [01_Fundamentals/numericals.md](01_Fundamentals/numericals.md) — Solved calculations across 3 levels (verified with Python)
+- [01_Fundamentals/mcqs.md](01_Fundamentals/mcqs.md) — 55 practice questions (MCQ, MSQ, NAT, Scenarios)
+- [01_Fundamentals/interview_qa.md](01_Fundamentals/interview_qa.md) — Top 25 interview questions with model answers
+- [01_Fundamentals/cheatsheet.md](01_Fundamentals/cheatsheet.md) — One-page quick revision sheet
 
 ### [02. OSI Model](02_OSI_Model/notes.md)
 *Core concept: The 7-layer theoretical reference framework and end-to-end data encapsulation.*
