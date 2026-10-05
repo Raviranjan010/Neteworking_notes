@@ -35,44 +35,77 @@ def check_mcq_balance(file_path: Path, root: Path) -> tuple[bool, str]:
     except Exception as e:
         return False, f"❌ {rel_path}: Could not read file: {e}"
 
-    # Locate Part A header and Part B header
-    m_a = re.search(r'^##\s+.*?Part A.*$', content, re.MULTILINE)
-    if not m_a:
+    part_a_matches = list(re.finditer(r'^##\s+.*?Part A.*$', content, re.MULTILINE))
+    if not part_a_matches:
         return True, f"ℹ️  {rel_path}: No 'Part A' heading found (skipped)"
 
-    m_b = re.search(r'^##\s+.*?Part B.*$', content, re.MULTILINE)
-    if m_b:
-        part_a_text = content[m_a.end():m_b.start()]
-    else:
-        part_a_text = content[m_a.end():]
+    is_overall_balanced = True
+    report_lines = [f"\n📄 {rel_path}"]
+    all_answers = []
 
-    # Find answer declarations: **Answer: X** or **Answer:** X
-    answers = re.findall(r'\*\*Answer:\s*\*?\s*([A-D])\b', part_a_text)
-    total = len(answers)
+    for idx, m_a in enumerate(part_a_matches):
+        # Determine section title by finding previous heading (# or ##)
+        preceding_text = content[:m_a.start()]
+        headings = list(re.finditer(r'^(#{1,3})\s+(.+)$', preceding_text, re.MULTILINE))
+        section_name = ""
+        for h in reversed(headings):
+            h_text = h.group(2).strip()
+            if not h_text.lower().startswith("part") and "practice question bank" not in h_text.lower():
+                section_name = h_text
+                break
+        if not section_name:
+            section_name = f"Section {idx + 1}" if len(part_a_matches) > 1 else "Part A"
 
-    if total == 0:
-        return False, f"❌ {rel_path}: No single-choice answers found in Part A"
+        # Determine where this Part A ends
+        after_text_start = m_a.end()
+        next_part_a_start = part_a_matches[idx + 1].start() if idx + 1 < len(part_a_matches) else len(content)
 
-    counts = {opt: answers.count(opt) for opt in "ABCD"}
-    percentages = {opt: (counts[opt] / total) * 100 for opt in "ABCD"}
+        m_b = re.search(r'^##\s+.*?Part B.*$', content[after_text_start:next_part_a_start], re.MULTILINE)
+        part_a_end = (after_text_start + m_b.start()) if m_b else next_part_a_start
 
-    # Evaluate balance rule: strictly 20.0% to 30.0%
-    is_balanced = True
-    report_lines = [
-        f"\n📄 {rel_path} (Part A Total: {total} questions)"
-    ]
+        part_a_text = content[after_text_start:part_a_end]
+        answers = re.findall(r'\*\*Answer:\s*\*?\s*([A-D])\b', part_a_text)
+        all_answers.extend(answers)
+        total = len(answers)
 
-    for opt in "ABCD":
-        cnt = counts[opt]
-        pct = percentages[opt]
-        if pct < 20.0 or pct > 30.0:
-            is_balanced = False
-            status = f"❌ FAIL (Outside 20%-30% range: {pct:.1f}%)"
-        else:
-            status = f"✅ PASS ({pct:.1f}%)"
-        report_lines.append(f"   Option {opt}: {cnt:2d} / {total} ({pct:5.1f}%)  -> {status}")
+        if total == 0:
+            report_lines.append(f"  ❌ [{section_name}]: No single-choice answers found in Part A")
+            is_overall_balanced = False
+            continue
 
-    return is_balanced, "\n".join(report_lines)
+        counts = {opt: answers.count(opt) for opt in "ABCD"}
+        percentages = {opt: (counts[opt] / total) * 100 for opt in "ABCD"}
+
+        sec_report = [f"  [{section_name}] (Part A Total: {total} questions)"]
+        for opt in "ABCD":
+            cnt = counts[opt]
+            pct = percentages[opt]
+            if pct < 20.0 or pct > 30.0:
+                is_overall_balanced = False
+                status = f"❌ FAIL (Outside 20%-30% range: {pct:.1f}%)"
+            else:
+                status = f"✅ PASS ({pct:.1f}%)"
+            sec_report.append(f"     Option {opt}: {cnt:2d} / {total} ({pct:5.1f}%)  -> {status}")
+
+        report_lines.extend(sec_report)
+
+    if len(part_a_matches) > 1:
+        total_file = len(all_answers)
+        if total_file > 0:
+            counts_file = {opt: all_answers.count(opt) for opt in "ABCD"}
+            pcts_file = {opt: (counts_file[opt] / total_file) * 100 for opt in "ABCD"}
+            report_lines.append(f"  --- Whole File Combined (Total Part A: {total_file} questions) ---")
+            for opt in "ABCD":
+                cnt = counts_file[opt]
+                pct = pcts_file[opt]
+                if pct < 20.0 or pct > 30.0:
+                    is_overall_balanced = False
+                    status = f"❌ FAIL (Outside 20%-30% range: {pct:.1f}%)"
+                else:
+                    status = f"✅ PASS ({pct:.1f}%)"
+                report_lines.append(f"     Option {opt}: {cnt:2d} / {total_file} ({pct:5.1f}%)  -> {status}")
+
+    return is_overall_balanced, "\n".join(report_lines)
 
 
 def main():
