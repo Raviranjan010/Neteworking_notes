@@ -58,24 +58,24 @@ At Layer 4, TCP data units are called **Segments**, whereas UDP data units are c
 </details>
 
 #### Q5. [GATE-style] Which layer of the 5-layer hybrid TCP/IP model handles physical signaling and bit encoding?
-- A) Physical Layer
+- A) Transport Layer
 - B) Data Link Layer
 - C) Network Layer
-- D) Transport Layer
+- D) Physical Layer
 <details><summary><b>Answer & Explanation</b></summary>
 
-**Answer: A**  
+**Answer: D**  
 The Physical Layer (Layer 1) manages voltages, optical light pulses, connectors, and physical transmission media.
 </details>
 
 #### Q6. [Company] Which protocol is used by the `ping` utility to test network reachability?
 - A) TCP
-- B) ICMP (Internet Control Message Protocol)
+- B) ARP
 - C) UDP
-- D) ARP
+- D) ICMP (Internet Control Message Protocol)
 <details><summary><b>Answer & Explanation</b></summary>
 
-**Answer: B**  
+**Answer: D**  
 Ping uses ICMP Echo Request (`Type 8`) and ICMP Echo Reply (`Type 0`).
 </details>
 
@@ -173,12 +173,12 @@ OSPF runs directly on top of the Internet Protocol, carrying IP Protocol number 
 
 #### Q15. [Company] Why does a TCP connection require a 4-tuple to uniquely identify a socket on a server?
 - A) Because the server must track 4 different Ethernet MAC addresses simultaneously
-- B) To differentiate concurrent connections from different clients (or different client ports) to the same server IP and listening port
+- B) To prevent DNS cache poisoning attacks
 - C) Because IPv4 addresses are divided into 4 decimal octets
-- D) To prevent DNS cache poisoning attacks
+- D) To differentiate concurrent connections from different clients (or different client ports) to the same server IP and listening port
 <details><summary><b>Answer & Explanation</b></summary>
 
-**Answer: B**  
+**Answer: D**  
 A TCP socket is bound by $(Source\text{ IP}, Source\text{ Port}, Dest\text{ IP}, Dest\text{ Port})$. This allows thousands of clients to connect to port 443 simultaneously.
 </details>
 
@@ -292,12 +292,12 @@ EtherType is a 2-byte field identifying which Layer 3 protocol payload is encaps
 
 #### Q25. [Company] Which routing protocol uses UDP port 520 for exchanging distance-vector routing updates?
 - A) BGP
-- B) RIP (Routing Information Protocol)
+- B) IS-IS
 - C) OSPF
-- D) IS-IS
+- D) RIP (Routing Information Protocol)
 <details><summary><b>Answer & Explanation</b></summary>
 
-**Answer: B**  
+**Answer: D**  
 RIP uses UDP port 520 to broadcast/multicast its routing table every 30 seconds.
 </details>
 
@@ -347,13 +347,13 @@ The router decrements TTL from 1 to 0, discards the datagram, and returns an ICM
 </details>
 
 #### Q30. [GATE-style] What is the Protocol field value in the IPv4 header when encapsulating a TCP segment?
-- A) 6
+- A) 89
 - B) 17
 - C) 1
-- D) 89
+- D) 6
 <details><summary><b>Answer & Explanation</b></summary>
 
-**Answer: A**  
+**Answer: D**  
 Protocol value 6 indicates TCP (17 = UDP, 1 = ICMP, 89 = OSPF).
 </details>
 

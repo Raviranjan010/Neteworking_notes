@@ -174,12 +174,12 @@ Queuing theory dictates that as traffic intensity approaches 1, queue length and
 
 #### Q15. [Concept] What role do Internet Exchange Points (IXPs) serve in global network routing?
 - A) They are satellite base stations used to communicate with deep space probes
-- B) They provide physical facilities where ISPs peer directly to exchange traffic without paying transit fees to Tier-1 backbones
+- B) They replace DNS root servers during emergency cyberattacks
 - C) They assign MAC addresses to network hardware manufacturers
-- D) They replace DNS root servers during emergency cyberattacks
+- D) They provide physical facilities where ISPs peer directly to exchange traffic without paying transit fees to Tier-1 backbones
 <details><summary><b>Answer & Explanation</b></summary>
 
-**Answer: B**  
+**Answer: D**  
 IXPs allow networks (ISPs, CDNs, cloud giants) to interconnect directly using Ethernet fabrics, lowering latency and transit costs.
 </details>
 
@@ -218,12 +218,12 @@ $\text{BDP} = R \times \text{RTT} = (10^9\text{ bps}) \times (0.040\text{ s}) = 
 
 #### Q19. [Company] What is the key functional difference between Datagram Packet Switching and Virtual Circuit Packet Switching?
 - A) Datagram switching uses copper cables; virtual circuits use optical fiber
-- B) In Datagram switching, each packet is routed independently; in Virtual Circuits, a fixed logical route is established before transmission
+- B) Virtual circuits allow packets to arrive out of order, whereas datagrams strictly arrive in order
 - C) Datagram switching requires connection setup; virtual circuits are completely connectionless
-- D) Virtual circuits allow packets to arrive out of order, whereas datagrams strictly arrive in order
+- D) In Datagram switching, each packet is routed independently; in Virtual Circuits, a fixed logical route is established before transmission
 <details><summary><b>Answer & Explanation</b></summary>
 
-**Answer: B**  
+**Answer: D**  
 Datagram switching is connectionless (packets take independent paths and may arrive out-of-order). Virtual circuits establish a path beforehand and preserve order.
 </details>
 
@@ -293,12 +293,12 @@ Store-and-forward means the entire packet must be received into buffer memory an
 
 #### Q25. [Concept] A company operates 10 regional data centers. Switching from a Full Mesh to a Hub-and-Spoke (Star) topology reduces the number of dedicated links from:
 - A) 90 to 10
-- B) 45 to 9
+- B) 100 to 10
 - C) 45 to 10
-- D) 100 to 10
+- D) 45 to 9
 <details><summary><b>Answer & Explanation</b></summary>
 
-**Answer: B**  
+**Answer: D**  
 In a full mesh of 10 nodes, links = $\frac{10 \times 9}{2} = 45$. In a hub-and-spoke where 1 node is chosen as the central hub and the other 9 connect to it, links = 9. (If a dedicated external switch is added as a star center, links = 10). Both reduce cables dramatically.
 </details>
 

@@ -7,10 +7,9 @@
 
 ## 📑 Question Navigation
 - [Definitions & Fundamentals (Q1–Q5)](#definitions--fundamentals)
-- [Architectural Differences (X vs Y) (Q6–Q12)](#architectural-differences-x-vs-y)
-- [Mechanics & Latency (Q13–Q17)](#mechanics--latency)
-- [Scenarios & Troubleshooting (Q18–Q21)](#scenarios--troubleshooting)
-- [System Design & Trick Questions (Q22–Q25)](#system-design--trick-questions)
+- [Architectural Differences (X vs. Y) (Q6–Q10)](#architectural-differences-x-vs-y)
+- [Mechanics & Latency (Q11–Q12)](#mechanics--latency)
+- [System Design & Trick Questions (Q13–Q15)](#system-design--trick-questions)
 
 ---
 

@@ -108,6 +108,12 @@
 
 ### J
 - **Jitter:** The statistical variation in packet transit delay across a network; highly disruptive to real-time interactive traffic like VoIP and video streaming. See [01_Fundamentals](01_Fundamentals/notes.md).
+- **Jumbo Frame:** An Ethernet frame with a payload greater than the standard 1500 bytes (up to 9000 bytes). See [05_Data_Link_Layer](05_Data_Link_Layer/).
+
+---
+
+### K
+- **Keepalive Timer:** A timer used in TCP or BGP to periodically verify that an idle connection or peering session remains active and reachable. See [11_Transport_Layer](11_Transport_Layer/notes.md).
 
 ---
 
@@ -141,6 +147,11 @@
 - **PDU (Protocol Data Unit):** The specific unit of data processed and exchanged at a given layer: Bits (L1), Frame (L2), Packet (L3), Segment (L4), Message/Data (L5–L7). See [02_OSI_Model](02_OSI_Model/notes.md).
 - **PMTUD (Path MTU Discovery):** A diagnostic technique setting the IPv4 Don't Fragment (DF) bit and listening for ICMP "Fragmentation Needed" messages to discover the maximum MTU across an end-to-end path without IP fragmentation. See [03_TCP_IP_Model](03_TCP_IP_Model/notes.md).
 - **Propagation Delay ($T_p$):** The time required for a physical bit signal to travel through the transmission medium from source to destination ($T_p = \frac{\text{Distance}}{\text{Propagation Speed}}$). See [01_Fundamentals](01_Fundamentals/notes.md).
+
+---
+
+### Q
+- **QoS (Quality of Service):** A collection of technologies and queuing mechanisms used to prioritize latency-sensitive traffic (VoIP, video) over bulk traffic. See [11_Transport_Layer](11_Transport_Layer/notes.md).
 
 ---
 
@@ -184,5 +195,20 @@
 
 ### W
 - **Wireshark:** A widely used open-source packet analyzer tool for network troubleshooting, analysis, software and protocol development, and education. See [16_Troubleshooting_and_Tools](16_Troubleshooting_and_Tools/).
+
+---
+
+### X
+- **X.25:** An early ITU-T standard suite for packet-switched WAN communication using virtual circuits over analog telecommunication lines. See [01_Fundamentals](01_Fundamentals/notes.md).
+
+---
+
+### Y
+- **Yagi-Uda Antenna:** A directional antenna architecture commonly deployed for point-to-point wireless RF links. See [14_Wireless_and_Mobile](14_Wireless_and_Mobile/).
+
+---
+
+### Z
+- **Zero Window:** A TCP flow-control condition where a receiver advertises a receive window size of 0, signaling the sender to temporarily halt data transmission. See [11_Transport_Layer](11_Transport_Layer/notes.md).
 
 *(Target: 400+ entries across all phases; updated incrementally with every module.)*

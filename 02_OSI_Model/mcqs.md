@@ -217,12 +217,12 @@ A standard IPv4 header is 20 bytes (IHL = 5, where each unit is 4 bytes: $5 \tim
 
 #### Q19. [Company] How does the Network layer determine which upper-layer transport protocol (TCP or UDP) should receive an incoming IP packet?
 - A) By inspecting the 48-bit MAC address
-- B) By examining the 8-bit "Protocol" field in the IPv4 header
+- B) By querying the physical transceiver clock
 - C) By checking the DNS record
-- D) By querying the physical transceiver clock
+- D) By examining the 8-bit "Protocol" field in the IPv4 header
 <details><summary><b>Answer & Explanation</b></summary>
 
-**Answer: B**  
+**Answer: D**  
 The IPv4 header contains an 8-bit Protocol field (value 6 for TCP, value 17 for UDP, value 1 for ICMP).
 </details>
 
