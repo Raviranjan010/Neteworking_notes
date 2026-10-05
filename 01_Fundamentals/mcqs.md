@@ -647,7 +647,7 @@ The output clearly states `Full-duplex, 1000Mb/s` (Gigabit Ethernet). In full du
 
 | Score | Rating | Action Plan |
 |---|---|---|
-| **50–55** | 🌟 Expert / GATE Ranker | Outstanding fundamentals. Proceed to [02_OSI_Model](../02_OSI_Model/notes.md). |
+| **50–55** | 🌟 Expert / GATE Ranker | Outstanding fundamentals. Proceed to [02_OSI_Model](../02_OSI_Model/README.md). |
 | **42–49** | 🚀 Solid Foundation | Good conceptual grasp. Review BDP and store-and-forward pipelining formulas. |
 | **32–41** | 📈 Intermediate | Review delay components ($T_t$ vs. $T_p$) in [notes.md](notes.md) and retry NAT questions. |
 | **< 32** | 🔄 Novice | Re-read [notes.md](notes.md), study the visual timelines in [diagrams.md](diagrams.md), and solve Level 1 numericals. |

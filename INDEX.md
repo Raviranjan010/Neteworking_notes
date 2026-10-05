@@ -28,11 +28,14 @@ A comprehensive directory of every topic, module, guide, cheatsheet, and lab in 
 - [01_Fundamentals/interview_qa.md](01_Fundamentals/interview_qa.md) — Top 25 interview questions with model answers
 - [01_Fundamentals/cheatsheet.md](01_Fundamentals/cheatsheet.md) — One-page quick revision sheet
 
-### [02. OSI Model](02_OSI_Model/notes.md)
+### [02. OSI Model](02_OSI_Model/README.md)
 *Core concept: The 7-layer theoretical reference framework and end-to-end data encapsulation.*
-- [02_OSI_Model/notes.md](02_OSI_Model/notes.md) — 7 layers, protocols, PDUs, and services
-- [02_OSI_Model/diagrams.md](02_OSI_Model/diagrams.md) — Encapsulation/decapsulation visual workflows
-- [02_OSI_Model/mcqs.md](02_OSI_Model/mcqs.md) — Layer identification and troubleshooting MCQs
+- [02_OSI_Model/README.md](02_OSI_Model/README.md) — Module overview & learning roadmap
+- [02_OSI_Model/notes.md](02_OSI_Model/notes.md) — Comprehensive notes, layer cards, byte overviews, and traps
+- [02_OSI_Model/diagrams.md](02_OSI_Model/diagrams.md) — 10 Mermaid architectural, encapsulation, and diagnostic diagrams
+- [02_OSI_Model/mcqs.md](02_OSI_Model/mcqs.md) — 55 practice questions (MCQ, MSQ, NAT, Scenarios)
+- [02_OSI_Model/interview_qa.md](02_OSI_Model/interview_qa.md) — Classic OSI interview questions with model answers
+- [02_OSI_Model/cheatsheet.md](02_OSI_Model/cheatsheet.md) — One-page quick revision sheet
 
 ### [03. TCP/IP Model](03_TCP_IP_Model/notes.md)
 *Core concept: The practical 4-layer / 5-layer hybrid architecture running the global Internet.*
